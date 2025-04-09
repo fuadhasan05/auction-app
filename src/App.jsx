@@ -1,12 +1,11 @@
-import { useState } from 'react'
 import './App.css'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
-  const [] = useState(0)
 
   return (
     <>
-      <h1></h1>
+       <Navbar> </Navbar>
     </>
   )
 }
