@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "title": "Vintage Leica M3 Camera",
+      "description": "Classic 1950s rangefinder camera, renowned for precision engineering, durable build, and superb image quality. A true collector’s gem.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 12,
+      "image": "https://i.ibb.co.com/SwDzxDpg/Bid1-min.png"
+    },
+    {
+      "id": 2,
+      "title": "1965 Gibson SG Standard Electric Guitar",
+      "description": "Iconic vintage electric guitar with dual humbuckers, fast neck, and legendary tone. A must-have for serious guitar enthusiasts.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 8,
+      "image": "https://i.ibb.co.com/HZvYcqN/Bid2-min.png"
+    },
+    {
+      "id": 3,
+      "title": "Original Apple Macintosh 128K (1984)",
+      "description": "Apple’s first Macintosh computer, iconic compact design with 128K RAM. A groundbreaking piece of computing history and innovation.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 20,
+      "image": "https://i.ibb.co.com/gMzyg2nT/Bid3-min.png"
+    },
+    {
+      "id": 4,
+      "title": "Rolex Submariner 16610",
+      "description": "Iconic luxury dive watch, stainless steel build, automatic movement, and timeless design. A collector’s favorite with lasting value.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 15,
+      "image": "https://i.ibb.co.com/qMqZ8f0R/Bid4-min.png"
+    },
+    {
+      "id": 5,
+      "title": "First Edition 'The Great Gatsby' by F. Scott Fitzgerald",
+      "description": "Rare first edition of Fitzgerald’s classic novel. A literary treasure featuring original cover art and immense historical and collectible value.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 32,
+      "image": "https://i.ibb.co.com/B2PSW1BK/Bid5-min.png"
+    },
+    {
+      "id": 6,
+      "title": "Mid-Century Modern Eames Lounge Chair",
+      "description": "Iconic 1950s lounge chair with molded plywood and leather. A timeless design classic, combining comfort, elegance, and collectible appeal.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 22,
+      "image": "https://i.ibb.co.com/cK1RZzRw/Bid6-min.png"
+    },
+    {
+      "id": 7,
+      "title": "Banksy Original Screen Print",
+      "description": "Authentic screen print by Banksy, featuring bold social commentary and signature style. A rare and highly sought-after collector’s piece.",
+      "currentBidPrice": "$2.850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 18,
+      "image": "https://i.ibb.co.com/9Rfv9Mc/Bid7-min.png"
+    }
+  ]
+  
