@@ -1,6 +1,7 @@
 import React from 'react';
 import BidItems from '../Bid_Items/BidItems';
 import FavItems from '../Fav_Items/FavItems';
+import EmptyFav from '../Fav_Items/EmptyFav';
 
 const Auctions = () => {
     return (
@@ -17,7 +18,8 @@ const Auctions = () => {
 
             </div>
             <div className="right-container w-[30%] bg-white rounded-xl p-4">
-                
+
+                <EmptyFav></EmptyFav>
                 <FavItems></FavItems>
 
             </div>
