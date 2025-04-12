@@ -7,21 +7,60 @@ import EmptyFav from './components/Fav_Items/EmptyFav'
 import FavItems from './components/Fav_Items/FavItems'
 import { useState } from 'react'
 import { FaRegHeart } from "react-icons/fa";
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+const itemsPromise = fetch('/items.json')
+  .then(response => response.json())
 
 function App() {
 
   const [favoriteItem, setFavoriteItem] = useState([]);
+  const [favoriteItemsId, setFavItemsId] = useState([]);
+  const [totalBidPrice, setTotalBidPrice] = useState(0.00);
+
 
   const handleBidItem = (bidItem) => {
-    setFavoriteItem([...favoriteItem,bidItem])
-  } 
+    setFavoriteItem([...favoriteItem,bidItem]);
+    setFavItemsId([...favoriteItemsId, bidItem.id]);
+    setTotalBidPrice(totalBidPrice + bidItem.currentBidPrice);
+  }
 
-  console.log(favoriteItem)
+  const removeFavoriteItem = (bidItem) => {
+    setFavoriteItem(favoriteItem.filter(favItem => favItem.id !== bidItem.id));
+    setFavItemsId(favoriteItemsId.filter(id => id !== bidItem.id));
+    setTotalBidPrice(totalBidPrice - bidItem.currentBidPrice);
+
+    toast.warn('Removed item from the list', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  } 
+  
 
   return (
     <>
        <Navbar> </Navbar>
+
+       <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
        <Banner> </Banner>
 
        <div className=" bg-gray-200">
@@ -34,7 +73,7 @@ function App() {
             {/* Left Container */}
             <div className="left-container w-[70%] h-fit bg-white rounded-xl p-4">
                 
-              <BidItems handleBidItem={handleBidItem}></BidItems>
+              <BidItems handleBidItem={handleBidItem} itemsPromise={itemsPromise} removeFavoriteItem={removeFavoriteItem} favoriteItemsId={favoriteItemsId} ></BidItems>
 
             </div>
             
@@ -48,18 +87,18 @@ function App() {
                 }
 
                 {
-                  favoriteItem.map((bidItem) => <FavItems key={bidItem.id} bidItem={bidItem} ></FavItems>)
+                  favoriteItem.map((favItem) => <FavItems key={favItem.id} bidItem={favItem} removeFavoriteItem={removeFavoriteItem} ></FavItems>)
                 }
 
              <div className='border-t-2 border-gray-200 flex justify-between items-center py-3'>
-                <h3 className='text-lg font-semibold'>Total Bits Amount</h3>
-                <h3 className='text-lg font-semibold'>${}</h3>
+                <h3 className='text-lg font-semibold'>Total Bids Amount</h3>
+                <h3 className='text-lg font-semibold'>${totalBidPrice}</h3>
               </div>
 
             </div>
 
             </div>
-        </div>
+      </div>
 
        <Footer> </Footer>
     </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import { toast, Bounce } from 'react-toastify';
 
 const BidItem = ({bidItem, handleBidItem, isFavourite}) => {
     
@@ -12,17 +12,17 @@ const BidItem = ({bidItem, handleBidItem, isFavourite}) => {
         if (!isFavourite) {
             handleBidItem(item);
 
-            toast.success('Item Added To Favorites', {
+            toast.success('An item is added to favorites', {
                 position: "top-right",
-                autoClose: 1500,
+                autoClose: 1000,
                 hideProgressBar: false,
-                closeOnClick: true,
+                closeOnClick: false,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: "colored",
                 transition: Bounce,
-            });
+                });
         }
     };
 
@@ -41,7 +41,7 @@ const BidItem = ({bidItem, handleBidItem, isFavourite}) => {
                     </div>
                 </div>
             </td>
-            <td className='font-medium'>{currentBidPrice}</td>
+            <td className='font-medium'>${currentBidPrice}</td>
             <td>{timeLeft}</td>
             <td>
                 <button onClick={()=>handleFavourite(bidItem)}

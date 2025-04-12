@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BidItem from '../Bid_Item/BidItem';
 
-const BidItems = ({handleBidItem}) => {
+const BidItems = ({handleBidItem, favoriteItemsId}) => {
 
     const [bidItems, setBidItems]=useState([])
 
@@ -29,7 +29,7 @@ const BidItems = ({handleBidItem}) => {
 
                     <tbody>
                     {
-                      bidItems.map((bidItem)=><BidItem key={bidItem.title} bidItem={bidItem} handleBidItem={handleBidItem}></BidItem>) 
+                      bidItems.map((bidItem)=><BidItem key={bidItem.title} bidItem={bidItem} handleBidItem={handleBidItem} isFavourite={favoriteItemsId.includes(bidItem.id)}></BidItem>) 
                     }
                     </tbody>
                 </table>
