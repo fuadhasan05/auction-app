@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BidItem from '../Bid_Item/BidItem';
 
-const BidItems = () => {
+const BidItems = ({handleBidItem}) => {
 
     const [bidItems, setBidItems]=useState([])
 
@@ -29,7 +29,7 @@ const BidItems = () => {
 
                     <tbody>
                     {
-                      bidItems.map((bidItem)=><BidItem bidItem={bidItem}></BidItem>) 
+                      bidItems.map((bidItem)=><BidItem key={bidItem.id} bidItem={bidItem} handleBidItem={handleBidItem}></BidItem>) 
                     }
                     </tbody>
                 </table>

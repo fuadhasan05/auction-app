@@ -5,9 +5,18 @@ import Footer from './components/Footer/Footer'
 import BidItems from './components/Bid_Items/BidItems'
 import EmptyFav from './components/Fav_Items/EmptyFav'
 import FavItems from './components/Fav_Items/FavItems'
+import { useState } from 'react'
 
 
 function App() {
+
+  const [favoriteItem, setFavoriteItem] = useState([]);
+
+  const handleBidItem = (bidItem) => {
+    setFavoriteItem([...favoriteItem,bidItem])
+  } 
+
+  console.log(favoriteItem)
 
   return (
     <>
@@ -23,13 +32,17 @@ function App() {
             <div className="w-11/12 mx-auto flex justify-between gap-2 pb-20">
             <div className="left-container w-[70%] bg-white rounded-xl p-4">
                 
-                <BidItems></BidItems>
+              <BidItems handleBidItem={handleBidItem}></BidItems>
 
             </div>
             <div className="right-container w-[30%] bg-white rounded-xl p-4">
 
                 <EmptyFav></EmptyFav>
                 <FavItems></FavItems>
+
+                {
+                  favoriteItem.map((marked) => <p>{marked.title}</p>)
+                }
 
             </div>
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaRegHeart } from "react-icons/fa";
 
-const BidItem = ({bidItem}) => {
+const BidItem = ({bidItem, handleBidItem}) => {
+    
     const { title, currentBidPrice, timeLeft, image } = bidItem;
     return (
 
@@ -21,7 +22,7 @@ const BidItem = ({bidItem}) => {
             <td className='font-medium'>{currentBidPrice}</td>
             <td>{timeLeft}</td>
             <td>
-                <button>
+                <button onClick={()=>handleBidItem(bidItem)}>
                 <FaRegHeart />
                 </button>
             </td>
