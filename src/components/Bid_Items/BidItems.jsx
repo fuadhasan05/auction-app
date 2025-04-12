@@ -29,7 +29,7 @@ const BidItems = ({handleBidItem}) => {
 
                     <tbody>
                     {
-                      bidItems.map((bidItem)=><BidItem key={bidItem.id} bidItem={bidItem} handleBidItem={handleBidItem}></BidItem>) 
+                      bidItems.map((bidItem)=><BidItem key={bidItem.title} bidItem={bidItem} handleBidItem={handleBidItem}></BidItem>) 
                     }
                     </tbody>
                 </table>
