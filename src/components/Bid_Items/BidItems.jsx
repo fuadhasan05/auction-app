@@ -11,7 +11,6 @@ const BidItems = () => {
         .then(data=>setBidItems(data))
     }, [])
 
-console.log(bidItems)
 
     return (
         <div>
