@@ -69,16 +69,16 @@ function App() {
                 <p className="pt-2">Discover and bid on extraordinary items</p>
             </div>
 
-            <div className="w-11/12 mx-auto flex justify-between gap-2 pb-20">
+            <div className="w-11/12 mx-auto flex justify-between gap-4 pb-20">
             {/* Left Container */}
-            <div className="left-container w-[70%] h-fit bg-white rounded-xl p-4">
+            <div className="left-container w-[70%] h-fit bg-white rounded-xl ">
                 
               <BidItems handleBidItem={handleBidItem} itemsPromise={itemsPromise} removeFavoriteItem={removeFavoriteItem} favoriteItemsId={favoriteItemsId} ></BidItems>
 
             </div>
             
             {/* Right Container */}
-            <div className="right-container w-[30%] h-fit bg-white rounded-xl p-4 ">
+            <div className="right-container w-[30%] h-fit bg-white rounded-xl ">
 
             <h1 className='flex items-center gap-2 justify-center text-xl font-bold text-[#0E2954] py-3 border-b-2 border-gray-200'> <FaRegHeart size={20} /> Favourite Items</h1>
 
@@ -90,13 +90,12 @@ function App() {
                   favoriteItem.map((favItem) => <FavItems key={favItem.id} bidItem={favItem} removeFavoriteItem={removeFavoriteItem} ></FavItems>)
                 }
 
-             <div className='border-t-2 border-gray-200 flex justify-between items-center py-3'>
+             <div className='border-t-2 border-gray-200 flex justify-between items-center p-3'>
                 <h3 className='text-lg font-semibold'>Total Bids Amount</h3>
                 <h3 className='text-lg font-semibold'>${totalBidPrice}</h3>
               </div>
 
             </div>
-
             </div>
       </div>
 
