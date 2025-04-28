@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import BidItem from '../Bid_Item/BidItem';
 
-const BidItems = ({handleBidItem, favoriteItemsId}) => {
+const BidItems = ({ handleBidItem, favoriteItemsId }) => {
 
-    const [bidItems, setBidItems]=useState([])
+    const [bidItems, setBidItems] = useState([])
 
     useEffect(() => {
         fetch("items.json")
-        .then(res => res.json())
-        .then(data=>setBidItems(data))
+            .then(res => res.json())
+            .then(data => setBidItems(data))
     }, [])
 
 
     return (
         <div>
 
-          <div className="overflow-x-auto rounded-lg">
+            <div className="overflow-x-auto rounded-lg">
                 <table className="table  rounded-xl">
 
                     <thead>
@@ -28,13 +28,13 @@ const BidItems = ({handleBidItem, favoriteItemsId}) => {
                     </thead>
 
                     <tbody>
-                    {
-                      bidItems.map((bidItem)=><BidItem key={bidItem.title} bidItem={bidItem} handleBidItem={handleBidItem} isFavourite={favoriteItemsId.includes(bidItem.id)}></BidItem>) 
-                    }
+                        {
+                            bidItems.map((bidItem) => <BidItem key={bidItem.title} bidItem={bidItem} handleBidItem={handleBidItem} isFavourite={favoriteItemsId.includes(bidItem.id)}></BidItem>)
+                        }
                     </tbody>
                 </table>
-          </div>
-          
+            </div>
+
         </div>
     );
 };

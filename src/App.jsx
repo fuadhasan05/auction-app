@@ -21,7 +21,7 @@ function App() {
 
 
   const handleBidItem = (bidItem) => {
-    setFavoriteItem([...favoriteItem,bidItem]);
+    setFavoriteItem([...favoriteItem, bidItem]);
     setFavItemsId([...favoriteItemsId, bidItem.id]);
     setTotalBidPrice(totalBidPrice + bidItem.currentBidPrice);
   }
@@ -42,14 +42,14 @@ function App() {
       theme: "light",
       transition: Bounce,
     });
-  } 
-  
+  }
+
 
   return (
     <>
-       <Navbar> </Navbar>
+      <Navbar> </Navbar>
 
-       <ToastContainer
+      <ToastContainer
         position="top-right"
         autoClose={1500}
         hideProgressBar={false}
@@ -61,45 +61,45 @@ function App() {
         theme="light"
       />
 
-       <Banner> </Banner>
+      <Banner> </Banner>
 
-       <div className=" bg-gray-200">
-            <div className="w-11/12 mx-auto py-20">
-                <h1 className="font-medium text-3xl text-[#0E2954]">Active Auctions</h1>
-                <p className="pt-2">Discover and bid on extraordinary items</p>
-            </div>
+      <div className=" bg-gray-200">
+        <div className="w-11/12 mx-auto py-20">
+          <h1 className="font-medium text-3xl text-[#0E2954]">Active Auctions</h1>
+          <p className="pt-2">Discover and bid on extraordinary items</p>
+        </div>
 
-            <div className="w-11/12 mx-auto flex justify-between gap-4 pb-20">
-            {/* Left Container */}
-            <div className="left-container w-[70%] h-fit bg-white rounded-xl ">
-                
-              <BidItems handleBidItem={handleBidItem} itemsPromise={itemsPromise} removeFavoriteItem={removeFavoriteItem} favoriteItemsId={favoriteItemsId} ></BidItems>
+        <div className="w-11/12 mx-auto flex justify-between gap-4 pb-20">
+          {/* Left Container */}
+          <div className="left-container w-[70%] h-fit bg-white rounded-xl ">
 
-            </div>
-            
-            {/* Right Container */}
-            <div className="right-container w-[30%] h-fit bg-white rounded-xl ">
+            <BidItems handleBidItem={handleBidItem} itemsPromise={itemsPromise} removeFavoriteItem={removeFavoriteItem} favoriteItemsId={favoriteItemsId} ></BidItems>
+
+          </div>
+
+          {/* Right Container */}
+          <div className="right-container w-[30%] h-fit bg-white rounded-xl ">
 
             <h1 className='flex items-center gap-2 justify-center text-xl font-bold text-[#0E2954] py-3 border-b-2 border-gray-200'> <FaRegHeart size={20} /> Favourite Items</h1>
 
-                {
-                favoriteItem.length === 0 && <EmptyFav></EmptyFav>
-                }
+            {
+              favoriteItem.length === 0 && <EmptyFav></EmptyFav>
+            }
 
-                {
-                  favoriteItem.map((favItem) => <FavItems key={favItem.id} bidItem={favItem} removeFavoriteItem={removeFavoriteItem} ></FavItems>)
-                }
+            {
+              favoriteItem.map((favItem) => <FavItems key={favItem.id} bidItem={favItem} removeFavoriteItem={removeFavoriteItem} ></FavItems>)
+            }
 
-             <div className='border-t-2 border-gray-200 flex justify-between items-center p-3'>
-                <h3 className='text-lg font-semibold'>Total Bids Amount</h3>
-                <h3 className='text-lg font-semibold'>${totalBidPrice}</h3>
-              </div>
-
+            <div className='border-t-2 border-gray-200 flex justify-between items-center p-3'>
+              <h3 className='text-lg font-semibold'>Total Bids Amount</h3>
+              <h3 className='text-lg font-semibold'>${totalBidPrice}</h3>
             </div>
-            </div>
+
+          </div>
+        </div>
       </div>
 
-       <Footer> </Footer>
+      <Footer> </Footer>
     </>
   )
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { toast, Bounce } from 'react-toastify';
 
-const BidItem = ({bidItem, handleBidItem, isFavourite}) => {
-    
+const BidItem = ({ bidItem, handleBidItem, isFavourite }) => {
+
     const { title, currentBidPrice, timeLeft, image } = bidItem;
 
     const isDisabled = isFavourite;
@@ -22,7 +22,7 @@ const BidItem = ({bidItem, handleBidItem, isFavourite}) => {
                 progress: undefined,
                 theme: "colored",
                 transition: Bounce,
-                });
+            });
         }
     };
 
@@ -44,17 +44,17 @@ const BidItem = ({bidItem, handleBidItem, isFavourite}) => {
             <td className='font-medium'>${currentBidPrice}</td>
             <td>{timeLeft}</td>
             <td>
-                <button onClick={()=>handleFavourite(bidItem)}
+                <button onClick={() => handleFavourite(bidItem)}
                     disabled={isDisabled}
                     className={`transition-all duration-300 ${isDisabled ? "cursor-not-allowed opacity-50" : "hover:scale-110 hover:cursor-pointer"
                         }`}>
-                {isDisabled ? 
-                    (
-                        <FaHeart className="text-xl text-red-500" />
-                    ) :
-                    (
-                        <FaRegHeart className="text-xl text-gray-400 hover:text-red-300" />
-                    )}
+                    {isDisabled ?
+                        (
+                            <FaHeart className="text-xl text-red-500" />
+                        ) :
+                        (
+                            <FaRegHeart className="text-xl text-gray-400 hover:text-red-300" />
+                        )}
                 </button>
             </td>
 
