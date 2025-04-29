@@ -31,8 +31,7 @@ This project is built using **ReactJS**, **TailwindCSS**, and **DaisyUI**. It al
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/auction-gallery.git
-   cd auction-gallery
+   git clone https://github.com/fuadhasan05/auction-app.git
    ```
 
 
